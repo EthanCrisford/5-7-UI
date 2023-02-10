@@ -5,15 +5,20 @@ using UnityEngine.UI;
 
 public class KeyboardSelection : MonoBehaviour
 {
-    [SerializeField] Button keyboardSelectionDefualtPosition;
+    [SerializeField] Button keyboardSelectionDefaultPosition;
 
     void Start()
     {
-        keyboardSelectionDefualtPosition.Select();
+        SetDefaultButton();
     }
 
     void Update()
     {
         
+    }
+
+    public void SetDefaultButton()
+    {
+        keyboardSelectionDefaultPosition.Select();
     }
 }
