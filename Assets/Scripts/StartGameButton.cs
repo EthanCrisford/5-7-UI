@@ -6,11 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class StartGameButton : MonoBehaviour
 {
-    [SerializeField] Button startButton;
-
     void Start()
     {
-        startButton.Select();
+
     }
 
     void Update()
