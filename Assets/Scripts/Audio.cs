@@ -15,6 +15,7 @@ public class Audio : MonoBehaviour
         public string name;
 
         public AudioClip clip;
+        public AudioClip OnClickSFX;
 
         [Range(0f, 1f)]
         public float volume;
@@ -27,6 +28,7 @@ public class Audio : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip clip;
+    public AudioClip OnClickSFX;
 
     void Start()
     {
@@ -43,7 +45,10 @@ public class Audio : MonoBehaviour
         Load();
 
         audioSource = GetComponent<AudioSource>();
+
+        AudioClip OnClickSFX = GetComponent<AudioClip>();
     }
+
 
     public void Update()
     {
@@ -65,9 +70,9 @@ public class Audio : MonoBehaviour
 
     public void ChangeSFXVol()
     {
-        //AudioListener.volume = volumeSlider.value;
 
         audioSource.PlayOneShot(clip, sfxSlider.value);
+        audioSource.PlayOneShot(OnClickSFX, sfxSlider.value);
 
     }
 
@@ -80,9 +85,11 @@ public class Audio : MonoBehaviour
     {
         volumeSlider.value = PlayerPrefs.GetFloat("musicVol");
         sfxSlider.value = PlayerPrefs.GetFloat("sfxVol");
-
-        print("sfx vol=" + PlayerPrefs.GetFloat("sfxVol"));
     }
 
+    public void PlayOnClickSFX()
+    {
+        audioSource.PlayOneShot(OnClickSFX);
+    }
 }
 
