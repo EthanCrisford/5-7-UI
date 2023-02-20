@@ -55,13 +55,6 @@ public class Audio : MonoBehaviour
         Save();
     }
 
-    void Awake()
-    {
-//AudioListener.volume = volumeSlider.value;
-        
-        //DontDestroyOnLoad(this.gameObject);
-    }
-
     public void ChangeVol()
     {
         AudioListener.volume = volumeSlider.value;
