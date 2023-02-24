@@ -47,6 +47,11 @@ public class Audio : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         AudioClip OnClickSFX = GetComponent<AudioClip>();
+
+        Object.DontDestroyOnLoad(clip);
+        Object.DontDestroyOnLoad(OnClickSFX);
+        Object.DontDestroyOnLoad(audioSource);
+
     }
 
 
@@ -84,5 +89,12 @@ public class Audio : MonoBehaviour
     {
         audioSource.PlayOneShot(OnClickSFX);
     }
+
+    /*public void ScenePersistent()
+    {
+        Object.DontDestroyOnLoad(clip);
+        Object.DontDestroyOnLoad(OnClickSFX);
+        Object.DontDestroyOnLoad(audioSource);
+    }*/
 }
 
